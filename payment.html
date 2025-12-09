@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PayPal JS SDK Standard Integration</title>
+
+        <style>
+
+           
+
+        body {
+            background: #f4f4f9;
+            margin: 0;
+            display: flex;
+            justify-content: center;   
+            align-items: flex-start;   
+            min-height: 100vh;
+            padding-top: 40px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Center the PayPal block */
+        .paypal-wrapper {
+            width: 100%;
+            max-width: 600px;        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        
+        #paypal-button-container > * {
+            display: block !important;
+            margin: 0 auto !important;
+        }
+        </style>
+    </head>
+    <body>
+
+        
+   
+        <div class="paypal-wrapper">
+            <h2 class="checkout-title">Complete Your Payment</h2>
+        <div id="paypal-button-container"></div>
+        <p id="result-message"></p>
+    </div>
+
+       
+        
+        <script
+            src="https://www.paypal.com/sdk/js?client-id=test&buyer-country=US&currency=USD&components=buttons&enable-funding=card&disable-funding=venmo,paylater"
+            data-sdk-integration-source="developer-studio"
+        ></script>
+        <script src="app.js"></script>
+       
+    </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unleaded – PayPal Checkout (Phase 1)</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 40px 16px;
+    }
+
+    .page-wrapper {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .brand-name {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .brand-tagline {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .checkout-card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      padding: 22px 20px 26px;
+    }
+
+    .checkout-title {
+      text-align: left;
+      margin: 0 0 4px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .checkout-subtitle {
+      margin: 0 0 16px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .product-summary {
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .product-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #111, #444);
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-name {
+      margin: 0 0 4px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .product-meta {
+      margin: 0;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .price-row.total {
+      border-top: 1px solid #e6e6e6;
+      padding-top: 8px;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .pay-section-title {
+      margin: 18px 0 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .pay-section-text {
+      margin: 0 0 8px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    #paypal-button-container {
+     
+      margin-top: 4px;
+    }
+
+    
+    #paypal-button-container > * {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .secondary-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: #111;
+      transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+    }
+
+    .secondary-btn:hover {
+      background: #111;
+      color: #ffffff;
+      
+      
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    
+    <div class="brand-header">
+      <h1 class="brand-name">Unleaded</h1>
+      
+    </div>
+
+    
+    <div class="checkout-card">
+      <h2 class="checkout-title">Checkout</h2>
+      
+      
+      <div class="product-summary">
+        <div class="product-thumb"></div>
+        <div class="product-info">
+          <p class="product-name">Classic Oversized Hoodie</p>
+          <p class="product-meta">Color: Black · Size: M</p>
+
+          <div class="price-row">
+            <span>Item</span>
+            <span>$90.00</span>
+          </div>
+          <div class="price-row">
+            
+          </div>
+          <div class="price-row total">
+            <span>Total</span>
+            <span>$90.00</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <p class="pay-section-title">Payment</p>
+      <p class="pay-section-text">Pay quickly and safely with your PayPal account.</p>
+
+      <div id="paypal-button-container"></div>
+
+      
+      <a href="/" class="secondary-btn">← Return to home</a>
+    </div>
+
+    <p id="result-message"></p>
+  </div>
+
+  
+  <script
+    src="https://www.paypal.com/sdk/js?client-id=Aa4VwV6eEzP6K4PdggurXW6yjO9NjL8KIIFl9cU4AC3NFGJJ-p5BJFNBdJfmlqwOVcRoKkx-1HAYh7Ce&buyer-country=US&currency=USD&components=buttons&disable-funding=venmo,paylater,card"
+    data-sdk-integration-source="developer-studio">
+  </script>
+
+  
+  <script src="app.js"></script>
+</body>
+
+</html>

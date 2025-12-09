@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Review your order</title>
+
+<style> body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 30px;
+  color: #333;
+}
+
+
+body > * {
+  max-width: 600px;
+  margin: auto;
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #222;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 20px;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+
+p {
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  line-height: 1.5;
+}
+
+
+p strong {
+  color: #000;
+}
+
+#confirm-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 25px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  
+}
+
+#confirm-btn:hover {
+  background-color: #005ad1;
+}
+
+#confirm-btn:active {
+  background-color: #0047a8;
+}</style>
+  
+</head>
+<body>
+  <h1>Review order details</h1>
+  <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+
+  <h2 >Shipping address</h2>
+  <p> Name: John Doe <br>
+Address: Badensche Str. 26
+10715 Berlin
+Germany</strong> <span id="shipping"></span></p>
+
+
+  <h2>Totals</h2>
+  <p>Items: 90.00 USD, <br> Shipping: 15.00 USD,<br>  Total: 105.00 USD</p>
+
+  <button id="confirm-btn">Confirm & Place Order</button>
+
+  <script>
+    
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get("token");
+    document.getElementById("order-id").textContent = orderId;
+
+    
+   
+  
+
+   
+
+    document.getElementById("confirm-btn").addEventListener("click", () => {
+      alert("In production: this would PATCH then CAPTURE the order on the server.\nFor this exercise, I did those calls via Postman.");
+    });
+  </script>
+</body>
+</html>
